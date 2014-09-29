@@ -8,7 +8,12 @@
        else{
             $_SESSION["vagn"] = array();       
        }
+       if($_GET["action"]=="add"){
+           $_SESSION["vagn"][]=array ("produktID"=>$_GET["id"],"antal"=>$_GET["antal"]);           
+       }
        var_dump($_GET);
+       echo "<br>";
+       var_dump($_SESSION["vagn"]);
        if(isset($_GET["id"])){
            foreach($_SESSION["vagn"] as $produkt){
                if($produkt["id"]==$_GET["id"]){
@@ -16,13 +21,12 @@
                }
                else{}
            }
-//            $_SESSION["vagn"][] = array ("produktID"=>1, "pris" => 199, "beskrivning" => "En gamingdator som är bättre än en konsoll");
-//            $_SESSION["vagn"][] = array ("produktID"=>2, "pris" => 299, "beskrivning" => "En gamingdator som är mycket bättre än en konsoll");
-//            $_SESSION["vagn"][] = array ("produktID"=>3, "pris" => 399, "beskrivning" => "En gamingdator som är jättemycket bättre än en konsoll");
-//            $_SESSION["vagn"][] = array ("produktID"=>4, "pris" => 499, "beskrivning" => "En gamingdator som är obeskrivligt mycket bättre än en konsoll");
-//            $_SESSION["vagn"][] = array ("produktID"=>5, "pris" => 599, "beskrivning" => "En gamingdator som är infernaliskt mycket bättre än en konsoll"); 
+            $_SESSION["vagn"][] = array ("produktID"=>1, "pris" => 199, "beskrivning" => "En gamingdator som är bättre än en konsoll");
+            $_SESSION["vagn"][] = array ("produktID"=>2, "pris" => 299, "beskrivning" => "En gamingdator som är mycket bättre än en konsoll");
+            $_SESSION["vagn"][] = array ("produktID"=>3, "pris" => 399, "beskrivning" => "En gamingdator som är jättemycket bättre än en konsoll");
+            $_SESSION["vagn"][] = array ("produktID"=>4, "pris" => 499, "beskrivning" => "En gamingdator som är obeskrivligt mycket bättre än en konsoll");
+            $_SESSION["vagn"][] = array ("produktID"=>5, "pris" => 599, "beskrivning" => "En gamingdator som är infernaliskt mycket bättre än en konsoll"); 
        }     
-       
         ?>
 <html>
     <head>
